@@ -41,7 +41,7 @@
             </div>
             <div class="login-ic">
                 <i class="icon"></i>
-                <input type="password"  name="pwd"  onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'password';}"/>
+                <input type="password"  name="password"  onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'password';}"/>
                 <div class="clear"> </div>
             </div>
 
