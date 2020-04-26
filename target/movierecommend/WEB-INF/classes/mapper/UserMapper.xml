@@ -6,12 +6,19 @@
     <resultMap type="User" id="userResultMap" >
         <id property="id" column="id"/>
         <result property="username" column="username"/>
-        <result property="pwd" column="pwd"/>
+        <result property="password" column="password"/>
     </resultMap>
 
     <select id="queryAllUser" resultMap="userResultMap">
-        SELECT id,username,pwd
+        SELECT id,username,password
         FROM user
     </select>
+
+    <select id="queryUser" resultMap="userResultMap">
+        SELECT id,username,password
+        FROM user
+        WHERE username = #{username} AND password = #{password}
+    </select>
+
 
 </mapper>

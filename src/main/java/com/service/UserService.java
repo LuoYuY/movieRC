@@ -9,4 +9,5 @@ public interface UserService {
 
 
     List<User> queryAllUser();
+    List<User> queryUser(String username,String pwd);
 }
