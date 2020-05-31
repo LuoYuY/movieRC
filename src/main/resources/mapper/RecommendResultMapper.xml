@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.RecommendResultDao">
+    <resultMap type="RecommendResult" id="recommendResultMap" >
+        <id property="userid" column="userid"/>
+        <result property="movieid" column="movieid"/>
+        <result property="rating" column="rating"/>
+        <result property="moviename" column="moviename"/>
+    </resultMap>
+
+    <select id="queryResult" resultMap="recommendResultMap">
+        SELECT *
+        FROM recommendresult
+        WHERE userid = #{userid}
+    </select>
+</mapper>

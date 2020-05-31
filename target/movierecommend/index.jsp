@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>DBI</title>
+    <title>首页</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -38,436 +38,198 @@
     <link rel="stylesheet" href="${APP_PATH }/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="${APP_PATH }/css/jquery.fancybox.min.css" media="screen">
     <link href="${APP_PATH }/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        function hello() {
+
+            $.ajax({
+                url: '${pageContext.request.contextPath }/movie/latest',
+                type: 'get',
+                data: {},
+                dataType: 'json',
+                success: function (result) {
+                    for(let i in result){ //第一层循环取到各个list
+                        if(i==0)
+                        {
+                            $('#picture1').css("background-image","url(https://image.tmdb.org/t/p/w300_and_h450_bestv2/"+result[i].picture+")");
+
+                            $('#moviename').html(result[i].moviename);
+                            $('#description').html('类型：'+result[i].typelist);
+                            $('#numrating').html(result[i].numrating+"人已打分");
+                            $('#averating').html('均分'+result[i].numrating);
+                            $('#latestlink').attr("href","${APP_PATH }/movie/detail?movieid="+result[i].movieid);
+                            $('#name1').html(result[i].moviename);
+                            $('#type1').html(result[i].typelist);
+                        }
+                        if(i==1)
+                        {
+                            $('#picture2').css("background-image","url(https://image.tmdb.org/t/p/w300_and_h450_bestv2/"+result[i].picture+")");
+                            $('#name2').html(result[i].moviename);
+                            $('#type2').html(result[i].typelist);
+                        }
+
+                    }
+                }
+            });
+
+
+            $.ajax({
+                url: '${pageContext.request.contextPath }/movie/banner',
+                type: 'get',
+                data: {},
+                dataType: 'json',
+                success: function (result) {
+                    $('#bannerMovieName').html(result.moviename);
+                    $('#BannerMovieDes').html(result.description);
+                    $('#bannersec').css("background","linear-gradient(110deg, #3c0e0e 55%, rgba(60, 90, 90, 0) 55%), url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+result.picture+")");
+
+                    $('#href1').attr("href","${APP_PATH }/movie/detail?movieid="+result.movieid);
+                    $('#href2').attr("href","${APP_PATH }/movie/detail?movieid="+result.movieid);
+                }
+            });
+
+
+
+        }
+    </script>
 </head>
-<body>
+<body onload="hello()">
 <!-- header section start -->
 <div class="header_section">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="logo" href="${APP_PATH }/index.html"><img src="${APP_PATH }/images/logp.png"></a>
+        <a class="logo" href="${APP_PATH }/index.jsp"><img src="${APP_PATH }/images/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="${APP_PATH }/index.html">Home</a>
+                    <a class="nav-link" href="${APP_PATH }/index.jsp">主页</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${APP_PATH }/movies.html">Movies</a>
+                    <a class="nav-link" href="${APP_PATH }/movie/list">电影</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${APP_PATH }/tv.html">TV</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${APP_PATH }/celebs.html">Celebs</a>
-                </li>
-            </ul>
-            <div class="search_icon"><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/notification-icon.png"><span class="padding_left_15">Notificastion</span></a></div>
-            <div class="search_icon"><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/eye-icon.png"><span class="padding_left_15">Viwe</span></a></div>
 
+            </ul>
 
             <!--login/user -->
             <div class="search_icon">
                 <c:choose>
                     <c:when test="${sessionScope.get('user')!=null}">
-                        <a href="${APP_PATH }/home.jsp"><img src="${APP_PATH }/images/user-icon.png"><span class="padding_left_15">${sessionScope.get('user').username}</span></a>
+                        <a href="${pageContext.request.contextPath }/collect/result?userid=${sessionScope.user.id}"><img src="${APP_PATH }/images/user-icon.png"><span class="padding_left_15">${sessionScope.get('user').username}</span></a>
                     </c:when>
                     <c:otherwise>
-                        <a href="${APP_PATH }/login.jsp"><img src="${APP_PATH }/images/user-icon.png"><span class="padding_left_15">login</span></a>
+                        <a href="${APP_PATH }/login.jsp"><img src="${APP_PATH }/images/user-icon.png"><span class="padding_left_15">登陆</span></a>
                     </c:otherwise>
 
                 </c:choose>
 
             </div>
 
-
-
-            <div class="search_icon"><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/search-icon.png"><span class="padding_left_15">Search...</span></a></div>
+            <div class="search_icon"><a href="${APP_PATH }/movie/list"><img src="${APP_PATH }/images/search-icon.png"><span class="padding_left_15">搜索...</span></a></div>
         </div>
     </nav>
 </div>
 <!-- header section end -->
+
+
+
+
 <!-- banner section end -->
-<div class="banner_section layout_padding">
+<div class="banner_section layout_padding" id="bannersec">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="banner_taital">Enjoy <br>The movies Shows And Songs</div>
-                <p class="banner_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                <div class="see_bt"><a href="${APP_PATH }/#">See More</a></div>
+                <div class="banner_taital" id="bannerMovieName">Toy story</div>
+                <p class="banner_text" id="BannerMovieDes">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                <div class="see_bt"><a id="href1" href="${APP_PATH }/#">See More</a></div>
             </div>
             <div class="col-md-6">
-                <div class="play_icon"><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/play-icon.png"></a></div>
+                <div class="play_icon"><a  id="href2"  href="${APP_PATH }/#"><img src="${APP_PATH }/images/play-icon.png"></a></div>
             </div>
         </div>
     </div>
 </div>
 <!-- banner section end -->
+
+
+
+
 <!-- arrival section start -->
 <div class="arrival_section layout_padding">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-lg-4">
-                <div class="image_1">
-                    <h2 class="jesusroch_text">J E S U S R O C H</h2>
-                    <p class="movie_text">Hollywood Movie</p>
+                <div id="picture1" class="image_1">
+                    <h2 id="name1" class="jesusroch_text"></h2>
+                    <p id="type1" class="movie_text"></p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
-                <div class="image_2">
-                    <h2 class="jesusroch_text">J E S U S R O C H</h2>
-                    <p class="movie_text">Hollywood Movie</p>
+                <div id="picture2" class="image_2">
+                    <h2 id="name2" class="jesusroch_text"></h2>
+                    <p id="type2" class="movie_text"></p>
                 </div>
             </div>
             <div class="col-sm-8 col-lg-4">
-                <h1 class="arrival_text">A r r i v a l</h1>
+                <h1 class="arrival_text">最新上映</h1>
                 <div class="movie_main">
-                    <div class="mins_text_1">150 mins</div>
-                    <div class="mins_text">Actions Movie</div>
-                    <div class="mins_text"><img src="${APP_PATH }/images/icon-1.png"><span class="icon_1">Watchlist</span></div>
+
+                    <div id="moviename" style="font-size: 35px;" class="mins_text"></div>
+
                 </div>
-                <p class="long_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+                <p id="description" class="long_text"></p>
                 <div class="rating_main">
                     <div class="row">
                         <div class="col-sm-6 col-lg-6">
-                            <div class="icon_2"><img src="${APP_PATH }/images/icon-2.png"><span class="padding_10">4.6 Revieweed</span></div>
+                            <div class="icon_2"><img src="${APP_PATH }/images/icon-2.png"><span id="numrating" class="padding_10"></span></div>
                         </div>
                         <div class="col-sm-6 col-lg-6">
-                            <div class="icon_2"><img src="${APP_PATH }/images/icon-2.png"><span class="padding_10">Your Rateing</span></div>
+                            <div class="icon_2"><img src="${APP_PATH }/images/icon-2.png"><span id="averating" class="padding_10"></span></div>
                         </div>
                     </div>
                 </div>
-                <div class="paly_bt"><a href="${APP_PATH }/#">Play Now</a></div>
+                <div class="paly_bt"><a id="latestlink" href="${APP_PATH }/#" target="_blank">详 情</a></div>
             </div>
         </div>
     </div>
 </div>
 <!-- arrival section end -->
 <!-- movies section start -->
-<div class="movies_section layout_padding">
+<div class="movies_section layout_padding" style="padding-top: 0px;">
     <div class="container">
-        <div class="movies_menu">
-            <ul>
-                <li class="active"><a href="${APP_PATH }/#">Overview</a></li>
-                <li><a href="${APP_PATH }/tv.html">TV</a></li>
-                <li><a href="${APP_PATH }/movies.html">Movies</a></li>
-                <li><a href="${APP_PATH }/#">Show</a></li>
-                <li><a href="${APP_PATH }/celebs.html">Celeb</a></li>
-                <li><a href="${APP_PATH }/#">Sports</a></li>
-                <li><a href="${APP_PATH }/#">News</a></li>
-                <li><a href="${APP_PATH }/#">Cartoon</a></li>
-            </ul>
-        </div>
         <div class="movies_section_2 layout_padding">
-            <h2 class="letest_text">Letest Movies</h2>
-            <div class="seemore_bt"><a href="${APP_PATH }/#">See More</a></div>
+            <h2 class="letest_text">为你推荐</h2>
+            <div class="seemore_bt"><a href="${pageContext.request.contextPath }/movie/list">更多</a></div>
             <div class="movies_main">
                 <div class="iamge_movies_main">
+                    <c:forEach items="${sessionScope.movies}" var="movie" varStatus="vs" begin="1" end="4" step="1">
                     <div class="iamge_movies">
                         <div class="image_3">
-                            <img src="${APP_PATH }/images/img-3.png" class="image" style="width:100%">
+
+                            <c:choose>
+                                <c:when test="${movie.picture !='NO PICTURE'}">
+                                    <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.picture}" class="image" style="width:100%">
+                                </c:when>
+                                <c:otherwise>
+                                    <img src="${APP_PATH }/images/img-9.png" class="image" style="width:100%">
+                                </c:otherwise>
+
+                            </c:choose>
+
                             <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
+                                <div class="playnow_bt"> <a href="${APP_PATH }/movie/detail?movieid=${movie.movieid}">Play Now</a> </div>
                             </div>
                         </div>
-                        <h1 class="code_text">CADE Prlor</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
+                        <h1 class="code_text">${movie.moviename }</h1>
+                        <p class="there_text">${movie.typelist } </p>
+
                     </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-4.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Bradon</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-5.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Anton Levin</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-6.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Sacha Styles</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-7.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Katledrazdu</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
-        <div class="movies_section_2 layout_padding">
-            <h2 class="letest_text">TV Shows</h2>
-            <div class="seemore_bt"><a href="${APP_PATH }/#">See More</a></div>
-            <div class="movies_main">
-                <div class="iamge_movies_main">
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-8.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">CADE Prlor</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-9.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Bradon</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-10.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Anton Levin</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-11.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Sacha Styles</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-12.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Katledrazdu</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="movies_section_2 layout_padding">
-            <h2 class="letest_text">Sports</h2>
-            <div class="seemore_bt"><a href="${APP_PATH }/#">See More</a></div>
-            <div class="movies_main">
-                <div class="iamge_movies_main">
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-13.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">CADE Prlor</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-14.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Bradon</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-15.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Anton Levin</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-16.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Sacha Styles</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="iamge_movies">
-                        <div class="image_3">
-                            <img src="${APP_PATH }/images/img-7.png" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="playnow_bt">Play Now</div>
-                            </div>
-                        </div>
-                        <h1 class="code_text">Katledrazdu</h1>
-                        <p class="there_text">There are many variations </p>
-                        <div class="star_icon">
-                            <ul>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                                <li><a href="${APP_PATH }/#"><img src="${APP_PATH }/images/star-icon.png"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="seebt_1"><a href="${APP_PATH }/#">See More</a></div>
+
     </div>
 </div>
 <!-- movies section end -->
@@ -487,25 +249,7 @@
     </div>
 </div>
 <!-- newsletter section end -->
-<!-- cooming  section start -->
-<div class="cooming_section layout_padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="image_17">
-                    <div class="image_17"><img src="${APP_PATH }/images/img-17.png"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h1 class="number_text">01</h1>
-                <h1 class="Cooming_soon_taital">Cooming soon</h1>
-                <p class="long_text_1">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
-                <div class="paly_bt"><a href="${APP_PATH }/#">Play Now</a></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- cooming  section end -->
+
 <!-- footer  section start -->
 <div class="footer_section layout_padding">
     <div class="container">
@@ -553,6 +297,16 @@
     $('#datepicker').datepicker({
         uiLibrary: 'bootstrap4'
     });
+
+
+    $(document).ready(function(){
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', '${pageContext.request.contextPath }/recommend/result?userid='+${sessionScope.user.id} ,true);
+        xhr.send();
+    });
+
 </script>
+
+
 </body>
 </html>

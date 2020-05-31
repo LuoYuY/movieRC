@@ -7,25 +7,160 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43b23430-5071-4cd8-8986-ae93577ad10b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Utils/AjaxUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/CollectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/MovieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/RecommendResultController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/BannerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/CollectDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/MovieinfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/PersonalratingsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/RecommendResultDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Banner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Collect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Movieinfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Personalratings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pojo/RecommendResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/req/AddMovieReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/BannerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/MovieService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/RecommendResultService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/BannerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/MovieServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/RecommendResultServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BannerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CollectMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MovieinfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PersonalratingsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/RecommendResultMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminBannner.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/commonCopy.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/flat-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/jquery.nouislider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/jquery.nouislider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admincss/slide.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-black.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-black.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bold.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bold.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bolditalic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bolditalic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bolditalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-bolditalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-italic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-italic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-light.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-light.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-light.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminfonts/lato/lato-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/captchaCode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_card_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_change.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_change_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_char.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_char_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_chara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_chara_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_house.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_house_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_rule.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_rule_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_source.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_source_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/icon_user_grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminimages/progress02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminindex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminjs/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminjs/html5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminjs/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminjs/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminjs/jquery.nouislider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminjs/jquery.nouislider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/adminjs/respond.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/mystyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/rate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/star-off-big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/star-on-big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/unstar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-1.5.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.raty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/user.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/loginstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/loginstyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pojo/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/com/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/movierecommend/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/movierecommend/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="spring-beans.schema" />
         <option value="jsf" />
+        <option value="FxmlFile" />
+        <option value="Kotlin File" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -54,6 +189,9 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1aNcnEyIx0H4EBVRBT5ogIsHUJe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -68,21 +206,35 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/data/第9章/Spark程序/RDD版本（使用spark.mllib包）/Film_Recommend" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/images" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/css" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/adminjs" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/adminimages" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/adminfonts" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/admincss" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.541">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Test" />
+      <module name="movieRC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.541" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.541" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -221,6 +373,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="movieRC:war exploded" />
+          <artifact name="movieRC:war" />
         </option>
       </method>
     </configuration>
@@ -299,12 +452,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Test" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.541" />
       <item itemvalue="Tomcat Server.index.jsp" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Tomcat Server.index.jsp" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -322,7 +477,12 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -361,7 +521,20 @@
       <workItem from="1587712632591" duration="7012000" />
       <workItem from="1587743423557" duration="163000" />
       <workItem from="1587743600019" duration="96000" />
-      <workItem from="1587743715417" duration="13189000" />
+      <workItem from="1587743715417" duration="14610000" />
+      <workItem from="1588237900065" duration="670000" />
+      <workItem from="1588244315257" duration="30000" />
+      <workItem from="1588244390521" duration="83000" />
+      <workItem from="1588244504465" duration="5092000" />
+      <workItem from="1589380906321" duration="26000" />
+      <workItem from="1589381011301" duration="47435000" />
+      <workItem from="1589693911669" duration="5000" />
+      <workItem from="1589693996752" duration="2006000" />
+      <workItem from="1590161125531" duration="42922000" />
+      <workItem from="1590417879380" duration="34000" />
+      <workItem from="1590418019281" duration="48000" />
+      <workItem from="1590418112143" duration="78000" />
+      <workItem from="1590418230963" duration="76505000" />
     </task>
     <task id="LOCAL-00001" summary="add 前端用户模板导入">
       <created>1587876357047</created>
@@ -370,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587876357047</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add 普通用户登陆">
+      <created>1587876749234</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587876749234</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,13 +558,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add 前端用户模板导入" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 前端用户模板导入" />
+    <MESSAGE value="add 普通用户登陆" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
   <component name="WindowStateProjectService">
     <state x="865" y="396" width="424" height="384" key="#BuildArtifactsBeforeRunChooser" timestamp="1587671116716">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="865" y="396" width="424" height="384" key="#BuildArtifactsBeforeRunChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1587671116716" />
+    <state x="588" y="214" width="800" height="677" key="#Template_Data_Languages" timestamp="1590584953039">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="214" width="800" height="677" key="#Template_Data_Languages/67.27.1853.1053@67.27.1853.1053" timestamp="1590584953039" />
     <state x="588" y="213" width="800" height="677" key="#Tomcat_Server" timestamp="1586593303197">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -393,116 +579,149 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="212" y="265" width="1263" height="756" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587696212871" />
-    <state x="801" y="239" width="374" height="626" key="#com.intellij.ide.util.MemberChooser" timestamp="1587742320899">
+    <state x="801" y="239" width="374" height="626" key="#com.intellij.ide.util.MemberChooser" timestamp="1590684456294">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="801" y="239" width="374" height="626" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1587742320899" />
-    <state x="494" y="129" width="1386" height="847" key="CommitChangelistDialog2" timestamp="1587876355422">
+    <state x="801" y="239" width="374" height="626" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590684456294" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590301393363">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="494" y="129" width="1386" height="847" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1587876355422" />
-    <state x="771" y="295" width="424" height="513" key="FileChooserDialogImpl" timestamp="1587673789754">
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590301393363" />
+    <state x="494" y="129" width="1386" height="847" key="CommitChangelistDialog2" timestamp="1590912867133">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="771" y="295" width="424" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587673789754" />
-    <state width="1492" height="278" key="GridCell.Tab.0.bottom" timestamp="1587876719889">
+    <state x="494" y="129" width="1386" height="847" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590912867133" />
+    <state x="771" y="295" width="424" height="513" key="FileChooserDialogImpl" timestamp="1590911908545">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719889" />
-    <state width="1492" height="278" key="GridCell.Tab.0.center" timestamp="1587876719887">
+    <state x="771" y="295" width="424" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590911908545" />
+    <state width="1492" height="300" key="GridCell.Tab.0.bottom" timestamp="1590909564648">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719887" />
-    <state width="1492" height="278" key="GridCell.Tab.0.left" timestamp="1587876719887">
+    <state width="1492" height="300" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564648" />
+    <state width="1492" height="300" key="GridCell.Tab.0.center" timestamp="1590909564647">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719887" />
-    <state width="1492" height="278" key="GridCell.Tab.0.right" timestamp="1587876719888">
+    <state width="1492" height="300" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564647" />
+    <state width="1492" height="300" key="GridCell.Tab.0.left" timestamp="1590909564647">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719888" />
-    <state width="1492" height="278" key="GridCell.Tab.1.bottom" timestamp="1587876719768">
+    <state width="1492" height="300" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564647" />
+    <state width="1492" height="300" key="GridCell.Tab.0.right" timestamp="1590909564647">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719768" />
-    <state width="1492" height="278" key="GridCell.Tab.1.center" timestamp="1587876719767">
+    <state width="1492" height="300" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564647" />
+    <state width="1492" height="300" key="GridCell.Tab.1.bottom" timestamp="1590909564648">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719767" />
-    <state width="1492" height="278" key="GridCell.Tab.1.left" timestamp="1587876719767">
+    <state width="1492" height="300" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564648" />
+    <state width="1492" height="300" key="GridCell.Tab.1.center" timestamp="1590909564648">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719767" />
-    <state width="1492" height="278" key="GridCell.Tab.1.right" timestamp="1587876719768">
+    <state width="1492" height="300" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564648" />
+    <state width="1492" height="300" key="GridCell.Tab.1.left" timestamp="1590909564648">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719768" />
-    <state width="1492" height="278" key="GridCell.Tab.2.bottom" timestamp="1587876719769">
+    <state width="1492" height="300" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564648" />
+    <state width="1492" height="300" key="GridCell.Tab.1.right" timestamp="1590909564648">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719769" />
-    <state width="1492" height="278" key="GridCell.Tab.2.center" timestamp="1587876719768">
+    <state width="1492" height="300" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564648" />
+    <state width="1492" height="300" key="GridCell.Tab.2.bottom" timestamp="1590909564649">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719768" />
-    <state width="1492" height="278" key="GridCell.Tab.2.left" timestamp="1587876719768">
+    <state width="1492" height="300" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564649" />
+    <state width="1492" height="300" key="GridCell.Tab.2.center" timestamp="1590909564649">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719768" />
-    <state width="1492" height="278" key="GridCell.Tab.2.right" timestamp="1587876719769">
+    <state width="1492" height="300" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564649" />
+    <state width="1492" height="300" key="GridCell.Tab.2.left" timestamp="1590909564648">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1492" height="278" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587876719769" />
-    <state width="1190" height="278" key="GridCell.Tab.3.bottom" timestamp="1586601754367">
+    <state width="1492" height="300" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564648" />
+    <state width="1492" height="300" key="GridCell.Tab.2.right" timestamp="1590909564649">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1190" height="278" key="GridCell.Tab.3.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586601754367" />
-    <state width="1190" height="278" key="GridCell.Tab.3.center" timestamp="1586601754366">
+    <state width="1492" height="300" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590909564649" />
+    <state width="1492" height="300" key="GridCell.Tab.3.bottom" timestamp="1590661542059">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1190" height="278" key="GridCell.Tab.3.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586601754366" />
-    <state width="1190" height="278" key="GridCell.Tab.3.left" timestamp="1586601754366">
+    <state width="1492" height="300" key="GridCell.Tab.3.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590661542059" />
+    <state width="1492" height="300" key="GridCell.Tab.3.center" timestamp="1590661542058">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1190" height="278" key="GridCell.Tab.3.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586601754366" />
-    <state width="1190" height="278" key="GridCell.Tab.3.right" timestamp="1586601754367">
+    <state width="1492" height="300" key="GridCell.Tab.3.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590661542058" />
+    <state width="1492" height="300" key="GridCell.Tab.3.left" timestamp="1590661542058">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1190" height="278" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586601754367" />
+    <state width="1492" height="300" key="GridCell.Tab.3.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590661542058" />
+    <state width="1492" height="300" key="GridCell.Tab.3.right" timestamp="1590661542059">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1492" height="300" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590661542059" />
+    <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1589548358660">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="526" y="210" width="924" height="684" key="Maven.ArtifactSearchDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1589548358660" />
     <state x="797" y="257" width="383" height="590" key="RollbackChangesDialog" timestamp="1587696835586">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="797" y="257" width="383" height="590" key="RollbackChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587696835586" />
-    <state x="476" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1587743558119">
+    <state x="476" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1589382734785">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="476" y="130" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1587743558119" />
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1586605030917">
+    <state x="476" y="130" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1589382734785" />
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1587876797489">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1586605030917" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1587743733118">
+    <state x="588" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1587876797489" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1590161139991">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587743733118" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1590161139991" />
+    <state x="621" y="170" width="735" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590683693627">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="621" y="170" width="735" height="764" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1590683693627" />
+    <state x="559" y="110" width="869" height="885" key="find.popup" timestamp="1588244224454">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="559" y="110" width="869" height="885" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1588244224454" />
+    <state x="302" y="256" width="1372" height="592" key="new project wizard" timestamp="1587877250907">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="302" y="256" width="1372" height="592" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1587877250907" />
+    <state x="657" y="253" key="run.anything.popup" timestamp="1590203552561">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="657" y="253" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1590203552561" />
+    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1590330380929">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="657" y="198" width="672" height="676" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1590330380929" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/Test.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/Test.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/Test.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/adminBannner.jsp</url>
+          <line>1953</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

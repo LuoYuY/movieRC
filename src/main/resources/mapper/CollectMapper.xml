@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CollectDao">
+    <resultMap type="Collect" id="resultMap" >
+        <id property="id" column="id"/>
+        <result property="userid" column="userid"/>
+        <result property="movieid" column="movieid"/>
+    </resultMap>
+
+    <resultMap type="Integer" id="movieResult" >
+        <result property="movieid" column="movieid"/>
+    </resultMap>
+
+    <insert id="add" parameterType="Collect" useGeneratedKeys="true" keyProperty="id">
+        insert into collect(userid, movieid)
+        values
+        (#{userid}, #{movieid})
+    </insert>
+
+    <select id="find" resultMap="resultMap">
+        SELECT id,userid,movieid
+        FROM collect
+        WHERE userid = #{userid} AND movieid = #{movieid}
+    </select>
+
+    <delete id="delete">
+        delete from collect
+        where userid = #{userid} AND movieid = #{movieid}
+    </delete>
+
+
+    <select id="getResult" resultMap="movieResult">
+        SELECT movieid
+        FROM collect
+        WHERE userid = #{userid}
+    </select>
+</mapper>

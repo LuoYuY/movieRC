@@ -7,18 +7,25 @@
         <id property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
     </resultMap>
 
     <select id="queryAllUser" resultMap="userResultMap">
-        SELECT id,username,password
+        SELECT *
         FROM user
     </select>
 
     <select id="queryUser" resultMap="userResultMap">
-        SELECT id,username,password
+        SELECT *
         FROM user
         WHERE username = #{username} AND password = #{password}
     </select>
+
+    <update id="update"  parameterType="com.pojo.User">
+         update user SET username=#{username},password=#{password},email=#{email},phone=#{phone}
+         where id=#{id}
+    </update>
 
 
 </mapper>

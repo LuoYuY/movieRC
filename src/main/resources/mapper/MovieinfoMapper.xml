@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.MovieinfoDao">
+    <resultMap type="Movieinfo" id="movieinfoMap" >
+        <id property="movieid" column="movieid"/>
+        <result property="releasetime" column="releasetime"/>
+        <result property="director" column="director"/>
+        <result property="leadactors" column="leadactors"/>
+        <result property="picture" column="picture"/>
+        <result property="averating" column="averating"/>
+        <result property="numrating" column="numrating"/>
+        <result property="description" column="description"/>
+        <result property="typelist" column="typelist"/>
+
+    </resultMap>
+
+
+    <select id="queryMovie" resultMap="movieinfoMap">
+        SELECT *
+        FROM movieinfo
+        WHERE movieid = #{movieid}
+    </select>
+
+
+    <select id="getAll" resultMap="movieinfoMap">
+        SELECT *
+        FROM movieinfo
+        LIMIT #{offset},#{limit}
+    </select>
+
+    <select id="queryMovieByName" resultMap="movieinfoMap">
+        SELECT *
+        FROM movieinfo
+        WHERE moviename like concat('%',#{moviename},'%')
+    </select>
+
+
+    <insert id="save" parameterType="com.pojo.Movieinfo" >
+        insert into movieinfo(moviename,releasetime,director,description,leadactors,typelist)
+        values
+        (#{moviename},#{releasetime},#{director},#{description},#{leadactors},#{typelist})
+    </insert>
+
+
+    <select id="getMax" resultMap="movieinfoMap">
+        SELECT * FROM movieinfo
+        where
+        releasetime =
+        (SELECT max(releasetime) FROM movieinfo where releasetime &lt; #{currentDate} and picture != 'NO PICTURE' )
+    </select>
+
+    <select id="getMax2" resultMap="movieinfoMap">
+        SELECT * FROM movierecommend.movieinfo
+        where
+        releasetime =
+        (
+        select max(releasetime) from movieinfo
+        where releasetime not in(SELECT max(releasetime) FROM movieinfo where releasetime &lt;'2020-5-27' and picture != 'NO PICTURE' )
+        and releasetime &lt; #{currentDate} and picture != 'NO PICTURE');
+    </select>
+
+
+    <delete id="delete">
+
+        delete from movierecommend.movieinfo where movieid = #{movieid}
+
+    </delete>
+
+
+
+</mapper>

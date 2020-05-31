@@ -1,0 +1,83 @@
+.box {
+    display: flex;
+    flex-flow:row wrap;
+    padding:0px 100px 0px 100px;
+}
+.item {
+    margin: 10px;
+    width: 200px;
+    display: inline-block;
+}
+.item img{
+    width: 100%;
+    height:100%;
+}
+
+
+.modifyform
+{
+
+
+}
+
+
+.formdata {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+
+.formbutton {
+    width: 100px;
+    margin-right: 170px;
+    float: right;
+}
+
+.formdata input {
+    width: 200px;
+}
+
+
+.singlemovie
+{
+    width: 200px;
+}
+
+.con{
+
+}
+
+
+.detaildiv{
+    display: inline-block;
+    width: 700px;
+    margin-top: -30px;
+}
+
+.detaildata
+{
+    font-size: 18px;
+    color: white;
+    font-weight: 900;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.detaildata label{
+
+    margin-right: 10px;
+}
+
+.detaildata p{
+    width: 600px;
+    font-size: 18px;
+    padding-top: 3px;
+}
+
+.detaildata div{
+
+}
+

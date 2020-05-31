@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.PersonalratingsDao">
+    <resultMap type="Personalratings" id="resultMap" >
+        <result property="userid" column="userid"/>
+        <result property="movieid" column="movieid"/>
+        <result property="rating" column="rating"/>
+        <result property="timestamp" column="timestamp"/>
+
+    </resultMap>
+
+    <insert id="add" parameterType="com.pojo.Personalratings" >
+        insert into personalratings(userid, movieid,rating,timestamp)
+        values
+        (#{userid}, #{movieid},#{rating},#{timestamp})
+    </insert>
+
+    <update id="update"  parameterType="com.pojo.Personalratings">
+         update personalratings SET timestamp=#{timestamp},rating=#{rating}
+         where userid=#{userid} and movieid=#{movieid}
+    </update>
+
+
+    <select id="find" resultMap="resultMap">
+        SELECT userid,movieid,rating,timestamp
+        FROM personalratings
+        WHERE userid = #{userid} AND movieid = #{movieid}
+    </select>
+
+</mapper>

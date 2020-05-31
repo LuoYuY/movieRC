@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BannerDao">
+    <resultMap type="Banner" id="resultMap" >
+        <id property="id" column="id"/>
+        <result property="movieid" column="movieid"/>
+        <result property="pushdate" column="pushdate"/>
+    </resultMap>
+
+    <select id="getBanner" resultMap="resultMap">
+        select * from banner where pushdate =(select max(pushdate) from banner )
+    </select>
+
+    <insert id="addBanner">
+        insert into banner(movieid,pushdate)
+        values
+        (#{movieid},#{pushdate})
+    </insert>
+
+</mapper>

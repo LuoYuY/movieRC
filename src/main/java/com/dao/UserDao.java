@@ -10,4 +10,6 @@ public interface UserDao {
 
     List<User> queryAllUser();
     List<User> queryUser(@Param("username")String username, @Param("password")String password);
+
+    void update(User user);
 }

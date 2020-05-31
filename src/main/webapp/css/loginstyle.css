@@ -63,7 +63,7 @@ body{
     position: relative;
 }
 .top-login span{
-    border: 2px solid #F36;
+    border: 2px solid #F9412E;
     width: 105px;
     height: 105px;
     display: block;
@@ -125,11 +125,11 @@ body{
     font-weight: 700;
     color: #fff;
     padding: 13px 0;
-    background: #ff3366;
+    background: #954a09;
     display: inline-block;
     width: 100%;
 	outline:none;
-	border:2px solid #ff3366;
+	border:2px solid #954a09;
 	cursor:pointer;
 	text-transform:uppercase;
 }
