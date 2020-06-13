@@ -71,10 +71,7 @@ public class UserController {
         user.setPassword(password);
         user.setEmail(email);
         user.setPhone(phone);
-
-
         userService.update(user);
-
         AjaxUtils.ajaxResponse(response,"0");
     }
 

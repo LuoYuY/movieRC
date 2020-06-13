@@ -6,8 +6,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="左右结构项目，属于大人员的社交工具">
-    <meta name="keywords" content="左右结构项目 社交 占座 ">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <title>后台电影管理</title>
@@ -85,10 +83,8 @@
         </div>
         <div id="personInfor">
             <p id="userName">${sessionScope.user.username}</p>
-            <p><span>yangxp@qq.com</span></p>
-            <p>
-                <a>退出登录</a>
-            </p>
+            <p><span>${sessionScope.user.email}</span></p>
+
         </div>
         <div class="meun-title">后台电影管理</div>
 

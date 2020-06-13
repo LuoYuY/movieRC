@@ -89,6 +89,51 @@
             });
 
 
+            let userid ="${sessionScope.user.id}";
+            $.ajax({
+                url: '${pageContext.request.contextPath }/recommend/result',
+                type: 'get',
+                data: {userid: userid,},
+                dataType: 'json',
+                async: false,
+                success: function (result) {
+
+                    let str = "";
+
+                    for(let i in result){ //第一层循环取到各个list
+
+                        let picture;
+                        if(result[i].picture=="NO PICTURE")
+                        {
+                            picture = "${APP_PATH }/images/img-9.png";
+                        }
+                        else
+                        {
+                            picture = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/"+result[i].picture;
+                        }
+
+
+
+                        str += "<div class=\"iamge_movies\" style=\"width: 17%;\"><div class=\"image_3\"><img src=\""+picture+
+                            "\" class=\"image\" style=\"width:100%\"><div class=\"middle\"><div class=\"playnow_bt\"> <a href=\"http://localhost:8080/movie/movie/detail?movieid="+result[i].movieid+
+                            "\">Play Now</a></div></div></div><h1 class=\"code_text\">"+result[i].moviename+
+                            "</h1> <p class=\"there_text\">"+result[i].typelist+
+                            "</p></div>"
+                    }
+                    $('#recommendlist').html(str);
+
+
+
+                    /*
+                    $('#bannerMovieName').html(result.moviename);
+                    $('#BannerMovieDes').html(result.description);
+                    $('#bannersec').css("background","linear-gradient(110deg, #3c0e0e 55%, rgba(60, 90, 90, 0) 55%), url(https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+result.picture+")");
+
+                    $('#href1').attr("href","${APP_PATH }/movie/detail?movieid="+result.movieid);
+                    $('#href2').attr("href","${APP_PATH }/movie/detail?movieid="+result.movieid);
+                    */
+                }
+            });
 
         }
     </script>
@@ -202,9 +247,9 @@
             <h2 class="letest_text">为你推荐</h2>
             <div class="seemore_bt"><a href="${pageContext.request.contextPath }/movie/list">更多</a></div>
             <div class="movies_main">
-                <div class="iamge_movies_main">
+                <div id="recommendlist" style="flex-flow: row wrap;" class="iamge_movies_main">
                     <c:forEach items="${sessionScope.movies}" var="movie" varStatus="vs" begin="1" end="4" step="1">
-                    <div class="iamge_movies">
+                    <div class="iamge_movies" style="width: 17%;">
                         <div class="image_3">
 
                             <c:choose>
@@ -296,13 +341,6 @@
 <script>
     $('#datepicker').datepicker({
         uiLibrary: 'bootstrap4'
-    });
-
-
-    $(document).ready(function(){
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', '${pageContext.request.contextPath }/recommend/result?userid='+${sessionScope.user.id} ,true);
-        xhr.send();
     });
 
 </script>

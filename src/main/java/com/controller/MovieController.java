@@ -8,7 +8,6 @@ import com.pojo.User;
 import com.req.AddMovieReq;
 import com.service.BannerService;
 import com.service.MovieService;
-import com.service.RecommendResultService;
 import com.service.UserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,11 +43,20 @@ public class MovieController {
     public String login(Integer movieid, HttpSession session, Model model) {
         Movieinfo movieinfo = movieService.queryMovieInfo(movieid);
         User user = (User)session.getAttribute("user");
-        Boolean result = userService.check(user.getId(),movieid);
-        Integer rating = movieService.queryPersonalRating(user.getId(),movieinfo.getMovieid());
         Integer flag = null;
-        if(result) flag = 1;
-        else flag = 0;
+        Integer rating = null;
+        if(user!=null)
+        {
+            Boolean result = userService.check(user.getId(),movieid);
+            rating = movieService.queryPersonalRating(user.getId(),movieinfo.getMovieid());
+            if(result) flag = 1;
+            else flag = 0;
+        }
+        else
+        {
+            flag = 0;
+            rating = 0;
+        }
 
         System.out.println("movieinfo"+movieinfo.getMoviename());
 

@@ -1,17 +1,20 @@
 package com;
 
+import com.dao.UserDao;
+import com.pojo.User;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Test {
+    @Autowired
+    private UserDao userDao;
+
     public static void main(String[] args)
     {
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//定义格式，不显示毫秒
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-//获取系统当前时间
-        String str = df.format(now);
 
     }
 

@@ -193,12 +193,18 @@
                 collect('${sessionScope.user.id}', '${movieinfo.movieid}', 0);
             }
         } else {
-            //openJsWidow("登录","<ph:root/>/u/showLoginMin",700,400);
+            alert("请先登录！");
+            return;
         }
     }
 
     function collect(userid, movieid, f) {
-        $.ajax({
+        if ('${sessionScope.user}' == null || '${sessionScope.user.id}' == "")
+        {
+            alert("请先登录!");
+            return;
+        }
+            $.ajax({
             url: '${pageContext.request.contextPath }/user/collect',
             type: 'post',
             data: {userid: userid, movieid: movieid, flag: f},
@@ -246,6 +252,12 @@
     }
 
     function registerRate(userid, movieid, score) {
+
+        if ('${sessionScope.user}' == null || '${sessionScope.user.id}' == "")
+        {
+            alert("请先登录!");
+            return;
+        }
         $.ajax({
             url: '${pageContext.request.contextPath }/user/rate',
             type: 'post',

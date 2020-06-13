@@ -165,18 +165,15 @@
         </div>
         <div id="personInfor">
             <p id="userName">${sessionScope.user.username}</p>
-            <p><span>yangxp@qq.com</span></p>
-            <p>
-                <a>退出登录</a>
-            </p>
+            <p><span>${sessionScope.user.email}</span></p>
         </div>
         <div class="meun-title">后台管理</div>
-        <div class="meun-item " > <a href="${APP_PATH }/admin.jsp"></a> <img
-                src="${APP_PATH }/adminimages/icon_source.png">电影管理
+        <div class="meun-item " > <a href="${APP_PATH }/admin.jsp"><img
+                src="${APP_PATH }/adminimages/icon_source.png">电影管理</a>
         </div>
 
-        <div class="meun-item meun-item-active" ><a href="${APP_PATH }/adminBannner.jsp"><img
-                src="${APP_PATH }/adminimages/icon_change_grey.png">广告位管理</a>
+        <div class="meun-item meun-item-active" ><a href="${APP_PATH }/adminBannner.jsp"></a><img
+                src="${APP_PATH }/adminimages/icon_change_grey.png">广告位管理
         </div>
     </div>
     <!-- 右侧具体内容栏目 -->
